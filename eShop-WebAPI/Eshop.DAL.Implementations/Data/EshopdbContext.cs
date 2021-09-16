@@ -36,7 +36,7 @@ namespace Eshop.Web.Data.EFModels
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Server=localhost;Database=eshopdb;user id=postgres;password=ppwrb4y;");
+                //optionsBuilder.UseNpgsql("Server=localhost;Database=eshopdb;user id=postgres;password=ppwrb4y;");
             }
         }
 
