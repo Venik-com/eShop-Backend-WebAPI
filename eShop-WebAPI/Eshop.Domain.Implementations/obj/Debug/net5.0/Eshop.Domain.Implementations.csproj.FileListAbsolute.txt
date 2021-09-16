@@ -1,0 +1,12 @@
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\bin\Debug\net5.0\Eshop.Domain.Implementations.deps.json
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\bin\Debug\net5.0\Eshop.Domain.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\bin\Debug\net5.0\ref\Eshop.Domain.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\bin\Debug\net5.0\Eshop.Domain.Implementations.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.AssemblyInfoInputs.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.AssemblyInfo.cs
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.csproj.CoreCompileInputs.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\ref\Eshop.Domain.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Implementations\obj\Debug\net5.0\Eshop.Domain.Implementations.csproj.AssemblyReference.cache

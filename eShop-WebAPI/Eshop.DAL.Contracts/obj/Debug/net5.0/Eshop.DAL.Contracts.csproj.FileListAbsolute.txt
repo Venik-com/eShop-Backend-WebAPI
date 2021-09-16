@@ -1,0 +1,12 @@
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\bin\Debug\net5.0\Eshop.DAL.Contracts.deps.json
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\bin\Debug\net5.0\Eshop.DAL.Contracts.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\bin\Debug\net5.0\ref\Eshop.DAL.Contracts.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\bin\Debug\net5.0\Eshop.DAL.Contracts.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.AssemblyInfoInputs.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.AssemblyInfo.cs
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\ref\Eshop.DAL.Contracts.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Contracts\obj\Debug\net5.0\Eshop.DAL.Contracts.csproj.AssemblyReference.cache

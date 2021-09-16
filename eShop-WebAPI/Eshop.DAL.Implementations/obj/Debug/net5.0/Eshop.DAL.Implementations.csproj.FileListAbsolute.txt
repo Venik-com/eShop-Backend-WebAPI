@@ -1,0 +1,15 @@
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\bin\Debug\net5.0\Eshop.DAL.Implementations.deps.json
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\bin\Debug\net5.0\Eshop.DAL.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\bin\Debug\net5.0\ref\Eshop.DAL.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\bin\Debug\net5.0\Eshop.DAL.Implementations.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.AssemblyInfoInputs.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.AssemblyInfo.cs
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.csproj.CoreCompileInputs.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\ref\Eshop.DAL.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\bin\Debug\net5.0\Eshop.DAL.Implementations.runtimeconfig.json
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\bin\Debug\net5.0\Eshop.DAL.Implementations.runtimeconfig.dev.json
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.genruntimeconfig.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Implementations\obj\Debug\net5.0\Eshop.DAL.Implementations.csproj.AssemblyReference.cache
