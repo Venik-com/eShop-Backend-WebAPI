@@ -11,5 +11,8 @@ namespace Eshop.Domain.Contracts.IServices
     {
         IQueryable<Product> GetAll();
         IQueryable<Product> Get();
+        Task<Product> Create(Product product);
+        Task<Product> Update(int ProductId);
+        Task<Product> Delete(int ProductId);
     }
 }

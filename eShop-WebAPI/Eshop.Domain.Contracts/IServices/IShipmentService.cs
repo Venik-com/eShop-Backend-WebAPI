@@ -11,5 +11,8 @@ namespace Eshop.Domain.Contracts.IServices
     {
         IQueryable<Shipment> GetAll();
         IQueryable<Shipment> Get();
+        Task<Shipment> Create(Shipment shipment);
+        Task<Shipment> Update(int ShipmentId);
+        Task<Shipment> Delete(int ShipmentId);
     }
 }
