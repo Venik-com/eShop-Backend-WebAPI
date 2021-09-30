@@ -10,12 +10,12 @@ namespace Eshop.Domain.Implementations.Services
 {
     public class ShipmentService : IShipmentService
     {
-        private EshopdbContext _context;
+        //private EshopdbContext _context;
 
-        public ShipmentService(EshopdbContext context)
-        {
-            _context = context;
-        }
+        //public ShipmentService(EshopdbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public async Task<Shipment> Create(Shipment shipment)
         {

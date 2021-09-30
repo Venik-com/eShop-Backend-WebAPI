@@ -11,6 +11,14 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Eshop.Web.Data.EFModels;
 using System;
+using Eshop.Web.GraphQL;
+using HotChocolate.AspNetCore;
+using HotChocolate.AspNetCore.Playground;
+using Eshop.Domain.Implementations.Services;
+using Eshop.Domain.Contracts.IServices;
+using Eshop.Web.GraphQL.Customers;
+using System.Diagnostics;
+using HotChocolate;
 
 namespace Eshop.Web
 {
@@ -26,7 +34,27 @@ namespace Eshop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddDbContext<EshopdbContext>(options =>
+            {
+                options
+                .UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
+                sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure();
+                });
+            });
+
+
+            services
+                .AddGraphQLServer()
+                .AddQueryType<Query>()
+                .AddMutationType<Mutation>();
+            //.AddType<CustomerType>()
+            //.AddType<AddCustomerInputType>()
+            //.AddType<AddCustomerPayloadType>()
+            //.AddFiltering()
+            //.AddSorting()
+            //.AddInMemorySubscriptions();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -34,17 +62,14 @@ namespace Eshop.Web
                 configuration.RootPath = "ClientApp/build";
             });
 
-            services.AddDbContext<EshopdbContext>(options =>
-            {
-                options
-                    .UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
-                        assembly =>
-                            assembly.MigrationsAssembly("Eshop.DAL.Migrations"));
-            });
-
-            services.AddAutoMapper(typeof(Startup));
+            //services.AddAutoMapper(typeof(Startup));
 
             // TO DO: Добавить мои сервисы сюда.
+            //services.AddScoped<CustomerService>();
+            //services.AddScoped<IInvoiceService, InvoiceService>();
+            //services.AddScoped<IOrderService, OrderService>();
+            //services.AddScoped<IProductService, ProductService>();
+            //services.AddScoped<IShipmentService, ShipmentService>();s
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +78,11 @@ namespace Eshop.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UsePlayground(new PlaygroundOptions
+                //{
+                //    QueryPath="/api",
+                //    Path="/Playground"
+                //});
             }
             else
             {
@@ -61,6 +91,7 @@ namespace Eshop.Web
                 app.UseHsts();
             }
 
+            app.UseWebSockets();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
@@ -69,10 +100,19 @@ namespace Eshop.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints
+                    .MapGraphQL()
+                    .WithOptions(new GraphQLServerOptions
+                     {
+                         AllowedGetOperations = AllowedGetOperations.QueryAndMutation
+                     });
             });
+
+            //app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
+            //{
+            //    GraphQLEndPoint = "/graphql",
+            //    Path = "/graphql-voyager"
+            //});
 
             app.UseSpa(spa =>
             {

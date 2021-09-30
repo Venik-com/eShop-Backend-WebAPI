@@ -10,12 +10,12 @@ namespace Eshop.Domain.Implementations.Services
 {
     public class OrderService : IOrderService
     {
-        private EshopdbContext _context;
+        //private EshopdbContext _context;
 
-        public OrderService(EshopdbContext context)
-        {
-            _context = context;
-        }
+        //public OrderService(EshopdbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public async Task<Order> Create(Order customer)
         {

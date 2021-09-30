@@ -10,3 +10,6 @@ C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.D
 C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Contracts\obj\Debug\net5.0\ref\Eshop.Domain.Contracts.dll
 C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Contracts\obj\Debug\net5.0\Eshop.Domain.Contracts.pdb
 C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Contracts\obj\Debug\net5.0\Eshop.Domain.Contracts.csproj.AssemblyReference.cache
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Contracts\bin\Debug\net5.0\Eshop.DAL.Implementations.dll
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Contracts\bin\Debug\net5.0\Eshop.DAL.Implementations.pdb
+C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.Domain.Contracts\obj\Debug\net5.0\Eshop.Domain.Contracts.csproj.CopyComplete

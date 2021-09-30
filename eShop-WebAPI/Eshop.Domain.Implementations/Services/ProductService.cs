@@ -10,12 +10,12 @@ namespace Eshop.Domain.Implementations.Services
 {
     public class ProductService : IProductService
     {
-        private EshopdbContext _context;
+        //private EshopdbContext _context;
 
-        public ProductService(EshopdbContext context)
-        {
-            _context = context;
-        }
+        //public ProductService(EshopdbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public async Task<Product> Create(Product product)
         {

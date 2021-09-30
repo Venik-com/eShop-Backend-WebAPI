@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -8,16 +8,13 @@ namespace Eshop.Web.Data.EFModels
 {
     public partial class EshopdbContext : DbContext
     {
-        public EshopdbContext()
-        {
-        }
-
         public EshopdbContext(DbContextOptions<EshopdbContext> options)
             : base(options)
         {
+            
         }
 
-        public virtual DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomerPaymentMethod> CustomerPaymentMethods { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
@@ -34,10 +31,7 @@ namespace Eshop.Web.Data.EFModels
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                //optionsBuilder.UseNpgsql("Server=localhost;Database=eshopdb;user id=postgres;password=ppwrb4y;");
-            }
+            optionsBuilder.UseNpgsql("Host=localhost;Database=eshopdb;Username=postgres;Password=ppwrb4y");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

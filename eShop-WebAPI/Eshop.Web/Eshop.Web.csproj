@@ -14,6 +14,7 @@
     <PackageReference Include="HotChocolate" Version="11.3.7" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="11.3.7" />
     <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
+    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="11.3.7" />
     <PackageReference Include="HotChocolate.Types" Version="11.3.7" />
     <PackageReference Include="HotChocolate.Types.Filters" Version="11.3.7" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.8" />
@@ -37,6 +38,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Eshop.DAL.Implementations\Eshop.DAL.Implementations.csproj" />
+    <ProjectReference Include="..\Eshop.Domain.Implementations\Eshop.Domain.Implementations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="GraphQL\Invoices\" />
+    <Folder Include="GraphQL\Orders\" />
+    <Folder Include="GraphQL\Products\" />
+    <Folder Include="GraphQL\Shipments\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

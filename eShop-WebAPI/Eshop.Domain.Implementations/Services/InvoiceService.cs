@@ -10,12 +10,12 @@ namespace Eshop.Domain.Implementations.Services
 {
     public class InvoiceService : IInvoiceService
     {
-        private EshopdbContext _context;
+        //private EshopdbContext _context;
 
-        public InvoiceService(EshopdbContext context)
-        {
-            _context = context;
-        }
+        //public InvoiceService(EshopdbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public async Task<Invoice> Create(Invoice invoice)
         {
