@@ -14,7 +14,7 @@ namespace Eshop.Web.Data.EFModels
             
         }
 
-        public DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomerPaymentMethod> CustomerPaymentMethods { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
