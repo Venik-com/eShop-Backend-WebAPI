@@ -48,13 +48,10 @@ namespace Eshop.Web
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
-                .AddMutationType<Mutation>();
-            //.AddType<CustomerType>()
-            //.AddType<AddCustomerInputType>()
-            //.AddType<AddCustomerPayloadType>()
-            //.AddFiltering()
-            //.AddSorting()
-            //.AddInMemorySubscriptions();
+                .AddMutationType<Mutation>()
+                .AddFiltering()
+                .AddSorting()
+                .AddInMemorySubscriptions();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -78,10 +75,16 @@ namespace Eshop.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UsePlayground(new PlaygroundOptions
+                app.UsePlayground(new PlaygroundOptions
+                {
+                    QueryPath = "/api",
+                    Path = "/Playground"
+                });
+
+                //app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
                 //{
-                //    QueryPath="/api",
-                //    Path="/Playground"
+                //    GraphQLEndPoint = "/graphql",
+                //    Path = "/graphql-voyager"
                 //});
             }
             else
@@ -107,12 +110,6 @@ namespace Eshop.Web
                          AllowedGetOperations = AllowedGetOperations.QueryAndMutation
                      });
             });
-
-            //app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
-            //{
-            //    GraphQLEndPoint = "/graphql",
-            //    Path = "/graphql-voyager"
-            //});
 
             app.UseSpa(spa =>
             {
