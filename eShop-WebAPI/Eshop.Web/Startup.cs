@@ -75,11 +75,11 @@ namespace Eshop.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UsePlayground(new PlaygroundOptions
-                {
-                    QueryPath = "/api",
-                    Path = "/Playground"
-                });
+                //app.UsePlayground(new PlaygroundOptions
+                //{
+                //    QueryPath = "/api",
+                //    Path = "/Playground"
+                //});
 
                 //app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
                 //{

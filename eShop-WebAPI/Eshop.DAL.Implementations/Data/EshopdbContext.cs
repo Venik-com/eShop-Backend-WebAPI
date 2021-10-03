@@ -14,20 +14,20 @@ namespace Eshop.Web.Data.EFModels
             
         }
 
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<CustomerPaymentMethod> CustomerPaymentMethods { get; set; }
-        public virtual DbSet<Invoice> Invoices { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderItem> OrderItems { get; set; }
-        public virtual DbSet<Payment> Payments { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<RefInvoiceStatusCode> RefInvoiceStatusCodes { get; set; }
-        public virtual DbSet<RefOrderItemStatusCode> RefOrderItemStatusCodes { get; set; }
-        public virtual DbSet<RefOrderStatusCode> RefOrderStatusCodes { get; set; }
-        public virtual DbSet<RefPaymentMethod> RefPaymentMethods { get; set; }
-        public virtual DbSet<RefProductType> RefProductTypes { get; set; }
-        public virtual DbSet<Shipment> Shipments { get; set; }
-        public virtual DbSet<ShipmentItem> ShipmentItems { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; } = default!;
+        public virtual DbSet<CustomerPaymentMethod> CustomerPaymentMethods { get; set; } = default!;
+        public virtual DbSet<Invoice> Invoices { get; set; } = default!;
+        public virtual DbSet<Order> Orders { get; set; } = default!;
+        public virtual DbSet<OrderItem> OrderItems { get; set; } = default!;
+        public virtual DbSet<Payment> Payments { get; set; } = default!;
+        public virtual DbSet<Product> Products { get; set; } = default!;
+        public virtual DbSet<RefInvoiceStatusCode> RefInvoiceStatusCodes { get; set; } = default!;
+        public virtual DbSet<RefOrderItemStatusCode> RefOrderItemStatusCodes { get; set; } = default!;
+        public virtual DbSet<RefOrderStatusCode> RefOrderStatusCodes { get; set; } = default!;
+        public virtual DbSet<RefPaymentMethod> RefPaymentMethods { get; set; } = default!;
+        public virtual DbSet<RefProductType> RefProductTypes { get; set; } = default!;
+        public virtual DbSet<Shipment> Shipments { get; set; } = default!;
+        public virtual DbSet<ShipmentItem> ShipmentItems { get; set; } = default!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
