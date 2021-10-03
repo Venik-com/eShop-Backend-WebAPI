@@ -43,11 +43,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="GraphQL\Models\Invoices\" />
-    <Folder Include="GraphQL\Models\Orders\" />
     <Folder Include="GraphQL\Models\Products\" />
     <Folder Include="GraphQL\Models\Shipments\" />
     <Folder Include="AdminPanelApp\" />
+    <Folder Include="GraphQL\Models\RefPaymentMethods\" />
+    <Folder Include="GraphQL\Models\CustomerPaymentMethods\" />
+    <Folder Include="GraphQL\Models\RefOrderStatusCodes\" />
+    <Folder Include="GraphQL\Models\RefProductTypes\" />
+    <Folder Include="GraphQL\Models\Payments\" />
+    <Folder Include="GraphQL\Models\RefInvoiceStatusCodes\" />
+    <Folder Include="GraphQL\Models\OrderItems\" />
+    <Folder Include="GraphQL\Models\RefOrderItemStatusCodes\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

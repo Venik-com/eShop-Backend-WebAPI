@@ -13,7 +13,7 @@ namespace Eshop.Web.GraphQL
     public class Mutation
     {
         [UseApplicationDbContext]
-        public async Task<AddCustomerPayload> AddCustomerAsync(
+        public async Task<AddInvoicePayload> AddCustomerAsync(
             AddCustomerInput input,
             [ScopedService] EshopdbContext context)
         {
@@ -50,7 +50,7 @@ namespace Eshop.Web.GraphQL
                 Debug.WriteLine(e.Message);
             }
 
-            return new AddCustomerPayload(customer);
+            return new AddInvoicePayload(customer);
         }
     }
 }

@@ -20,5 +20,16 @@ namespace Eshop.Web.GraphQL
                 CustomerByIdDataLoader dataLoader,
                 CancellationToken cancellationToken) =>
                 dataLoader.LoadAsync(id, cancellationToken);
+
+
+        [UseApplicationDbContext]
+        public Task<List<Invoice>> GetInvoices([ScopedService] EshopdbContext context) =>
+           context.Invoices.ToListAsync();
+
+        public Task<Invoice> GetInvoiceAsync(
+                int id,
+                InvoiceByIdDataLoader dataLoader,
+                CancellationToken cancellationToken) =>
+                dataLoader.LoadAsync(id, cancellationToken);
     }
 }

@@ -51,6 +51,7 @@ namespace Eshop.Web
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
                 .AddDataLoader<CustomerByIdDataLoader>()
+                .AddDataLoader<InvoiceByIdDataLoader>()
                 .AddFiltering()
                 .AddSorting()
                 .AddInMemorySubscriptions();
