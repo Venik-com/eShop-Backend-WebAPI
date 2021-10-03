@@ -75,6 +75,9 @@ namespace Eshop.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                // Не работает, прочитай
+                // https://github.com/apollographql/apollo-tracing
                 //app.UsePlayground(new PlaygroundOptions
                 //{
                 //    QueryPath = "/api",
