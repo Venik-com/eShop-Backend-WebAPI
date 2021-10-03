@@ -1,5 +1,6 @@
 ﻿using Eshop.Web.Data.EFModels;
 using Eshop.Web.GraphQL.Customers;
+using Eshop.Web.GraphQL.Extensions;
 using HotChocolate;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,10 @@ namespace Eshop.Web.GraphQL
 {
     public class Mutation
     {
+        [UseApplicationDbContext]
         public async Task<AddCustomerPayload> AddCustomerAsync(
             AddCustomerInput input,
-            [Service] EshopdbContext context)
+            [ScopedService] EshopdbContext context)
         {
             var customer = new Customer
             {

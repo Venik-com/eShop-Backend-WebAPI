@@ -43,10 +43,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="GraphQL\Invoices\" />
-    <Folder Include="GraphQL\Orders\" />
-    <Folder Include="GraphQL\Products\" />
-    <Folder Include="GraphQL\Shipments\" />
+    <Folder Include="GraphQL\Models\Invoices\" />
+    <Folder Include="GraphQL\Models\Orders\" />
+    <Folder Include="GraphQL\Models\Products\" />
+    <Folder Include="GraphQL\Models\Shipments\" />
+    <Folder Include="AdminPanelApp\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

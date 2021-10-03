@@ -1,19 +1,24 @@
-﻿using System;
-using Eshop.Web.Data.EFModels;
+﻿using Eshop.Web.Data.EFModels;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Eshop.Domain.Contracts.IServices;
 using HotChocolate;
-using HotChocolate.Data;
-using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using Eshop.Web.GraphQL.Extensions;
+using System.Threading;
+using Eshop.Web.GraphQL.DataLoader;
 
 namespace Eshop.Web.GraphQL
 {
     public class Query
     {
-        public IQueryable<Customer> GetCustomers([Service] EshopdbContext context) =>
-           context.Customers;
+        [UseApplicationDbContext]
+        public Task<List<Customer>> GetCustomers([ScopedService] EshopdbContext context) =>
+           context.Customers.ToListAsync();
+
+        public Task<Customer> GetCustomerAsync(
+                int id,
+                CustomerByIdDataLoader dataLoader,
+                CancellationToken cancellationToken) =>
+                dataLoader.LoadAsync(id, cancellationToken);
     }
 }

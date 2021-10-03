@@ -31,7 +31,7 @@ namespace Eshop.Web.Data.EFModels
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=eshopdb;Username=postgres;Password=ppwrb4y");
+            //optionsBuilder.UseNpgsql("Host=localhost;Database=eshopdb;Username=postgres;Password=ppwrb4y");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -19,6 +19,7 @@ using Eshop.Domain.Contracts.IServices;
 using Eshop.Web.GraphQL.Customers;
 using System.Diagnostics;
 using HotChocolate;
+using Eshop.Web.GraphQL.DataLoader;
 
 namespace Eshop.Web
 {
@@ -34,7 +35,7 @@ namespace Eshop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EshopdbContext>(options =>
+            services.AddPooledDbContextFactory<EshopdbContext>(options =>
             {
                 options
                 .UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
@@ -49,6 +50,7 @@ namespace Eshop.Web
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
+                .AddDataLoader<CustomerByIdDataLoader>()
                 .AddFiltering()
                 .AddSorting()
                 .AddInMemorySubscriptions();
