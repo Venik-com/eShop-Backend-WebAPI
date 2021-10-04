@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.DataLoader
 {
-    public class OrderByIdDataLoader : BatchDataLoader<int, Order>
+    public class InvoiceByInvoiceNumberDataLoader : BatchDataLoader<int, Invoice>
     {
         private readonly IDbContextFactory<EshopdbContext> _dbContextFactory;
 
-        public OrderByIdDataLoader(
+        public InvoiceByInvoiceNumberDataLoader(
             IBatchScheduler batchScheduler,
             IDbContextFactory<EshopdbContext> dbContextFactory)
             : base(batchScheduler)
@@ -23,16 +23,16 @@ namespace Eshop.Web.GraphQL.DataLoader
                 throw new ArgumentNullException(nameof(dbContextFactory));
         }
 
-        protected override async Task<IReadOnlyDictionary<int, Order>> LoadBatchAsync(
+        protected override async Task<IReadOnlyDictionary<int, Invoice>> LoadBatchAsync(
             IReadOnlyList<int> keys,
             CancellationToken cancellationToken)
         {
             await using EshopdbContext dbContext =
                 _dbContextFactory.CreateDbContext();
 
-            return await dbContext.Orders
-                .Where(s => keys.Contains(s.OrderId))
-                .ToDictionaryAsync(t => t.OrderId, cancellationToken);
+            return await dbContext.Invoices
+                .Where(s => keys.Contains(s.InvoiceNumber))
+                .ToDictionaryAsync(t => t.InvoiceNumber, cancellationToken);
         }
     }
 }
