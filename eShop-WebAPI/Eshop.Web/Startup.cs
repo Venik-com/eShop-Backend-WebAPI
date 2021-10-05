@@ -55,6 +55,7 @@ namespace Eshop.Web
                 .AddDataLoader<PaymentByIdDataLoader>()
                 .AddDataLoader<OrderByIdDataLoader>()
                 .AddDataLoader<ProductByIdDataLoader>()
+                .AddDataLoader<ShipmentByIdDataLoader>()
                 .AddFiltering()
                 .AddSorting()
                 .AddInMemorySubscriptions();
