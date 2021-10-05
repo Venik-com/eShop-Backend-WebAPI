@@ -1,6 +1,7 @@
 ﻿using Eshop.Web.Data.EFModels;
 using Eshop.Web.GraphQL.Customers;
 using Eshop.Web.GraphQL.Extensions;
+using Eshop.Web.GraphQL.Invoices;
 using HotChocolate;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Eshop.Web.GraphQL
     public class Mutation
     {
         [UseApplicationDbContext]
-        public async Task<AddInvoicePayload> AddCustomerAsync(
+        public async Task<AddCustomerPayload> AddCustomerAsync(
             AddCustomerInput input,
             [ScopedService] EshopdbContext context)
         {
@@ -50,7 +51,7 @@ namespace Eshop.Web.GraphQL
                 Debug.WriteLine(e.Message);
             }
 
-            return new AddInvoicePayload(customer);
+            return new AddCustomerPayload(customer);
         }
     }
 }
