@@ -56,6 +56,7 @@ namespace Eshop.Web
                 .AddDataLoader<OrderByIdDataLoader>()
                 .AddDataLoader<ProductByIdDataLoader>()
                 .AddDataLoader<ShipmentByIdDataLoader>()
+                .AddDataLoader<RefProductTypeByProductTypeCodeDataLoader>()
                 .AddFiltering()
                 .AddSorting()
                 .AddInMemorySubscriptions();
