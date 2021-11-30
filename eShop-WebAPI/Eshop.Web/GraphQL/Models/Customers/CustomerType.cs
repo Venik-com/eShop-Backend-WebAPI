@@ -33,22 +33,22 @@ namespace Eshop.Web.GraphQL.Customers
                 .UseUpperCase();
         }
 
-        private class CustomerResolvers
-        {
-            public async Task<IEnumerable<Order>> GetOrders(
-                Customer customer,
-                [ScopedService] EshopdbContext dbContext,
-                OrderByIdDataLoader orderById,
-                CancellationToken cancellationToken)
-            {
-                int[] orderIds = await dbContext.Customers
-                    .Where(s => s.CustomerId == customer.CustomerId)
-                    .Include(s => s.CustomerId)
-                    .SelectMany(s => s.Orders.Select(t => t.OrderId))
-                    .ToArrayAsync();
+        //private class CustomerResolvers
+        //{
+        //    public async Task<IEnumerable<Order>> GetOrders(
+        //        Customer customer,
+        //        [ScopedService] EshopdbContext dbContext,
+        //        OrderByIdDataLoader orderById,
+        //        CancellationToken cancellationToken)
+        //    {
+        //        System.Guid[] orderIds = await dbContext.Customers
+        //            .Where(s => s.CustomerId == customer.CustomerId)
+        //            .Include(s => s.CustomerId)
+        //            .SelectMany(s => s.Orders.Select(t => t.OrderId))
+        //            .ToArrayAsync();
 
-                return await orderById.LoadAsync(orderIds, cancellationToken);
-            }
-        }
+        //        return await orderById.LoadAsync(orderIds, cancellationToken);
+        //    }
+        //}
     }
 }

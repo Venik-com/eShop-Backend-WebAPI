@@ -13,7 +13,7 @@ namespace Eshop.Web.Data.EFModels
             Orders = new HashSet<Order>();
         }
 
-        public int CustomerId { get; set; }
+        public Guid CustomerId { get; set; }
         public string OrganisationOrPerson { get; set; }
         public string OrganisationName { get; set; }
         public string Gender { get; set; }

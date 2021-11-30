@@ -1,12 +1,10 @@
 ﻿using Eshop.Web.Data.EFModels;
-using Eshop.Web.GraphQL.Customers;
+using Eshop.Web.GraphQL.Common;
 using Eshop.Web.GraphQL.Extensions;
-using Eshop.Web.GraphQL.Invoices;
 using HotChocolate;
 using HotChocolate.Types;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,6 +20,7 @@ namespace Eshop.Web.GraphQL.Customers
         {
             var customer = new Customer
             {
+                CustomerId = new Guid(),
                 OrganisationOrPerson = input.OrganisationOrPerson,
                 OrganisationName = input.OrganisationName,
                 Gender = input.Gender,
@@ -50,9 +49,13 @@ namespace Eshop.Web.GraphQL.Customers
             catch(Exception e)
             {
                 context.Customers.Remove(customer);
-                Debug.WriteLine(e.Message);
+
+                // В случае ошибки, вернем их список.
+                var errors = new List<UserError>();
+                errors.Append(new UserError(e.Message, e.HResult.ToString()));
+                return new AddCustomerPayload(errors);
             }
-            // TO DO: Тут должно возвращать ошибку, если не получилось создать.
+            
             return new AddCustomerPayload(customer);
         }
     }

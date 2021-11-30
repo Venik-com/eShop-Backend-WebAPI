@@ -13,9 +13,6 @@ namespace Eshop.Web.GraphQL.Orders
             descriptor.Description("Represents the input to add for a customer.");
 
             descriptor
-                .Field(c => c.OrderId)
-                .Description("Номер счет-фактуры.");
-            descriptor
                 .Field(c => c.CustomerId)
                 .Description("Id заказа.");
             descriptor

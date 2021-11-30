@@ -14,8 +14,8 @@ namespace Eshop.Web.Data.EFModels
             Shipments = new HashSet<Shipment>();
         }
 
-        public int OrderId { get; set; }
-        public int CustomerId { get; set; }
+        public Guid OrderId { get; set; }
+        public Guid CustomerId { get; set; }
         public string OrderStatusCode { get; set; }
         public string DataOrderPlaced { get; set; }
         public string OrderDetails { get; set; }

@@ -11,31 +11,31 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Web.GraphQL.Customers
+namespace Eshop.Web.GraphQL.Orders
 {
     [ExtendObjectType("Query")]
-    public class CustomerQueries
+    public class OrderQueries
     {
         [UseEshopDbContext]
-        public Task<List<Customer>> GetCustomers([ScopedService] EshopdbContext context) =>
-            context.Customers.ToListAsync();
+        public Task<List<Order>> GetOrders([ScopedService] EshopdbContext context) =>
+            context.Orders.ToListAsync();
 
-        public async Task<Customer> GetCustomerByIdAsync(
-            [ID(nameof(Customer))] Guid id,
-            CustomerByIdDataLoader dataLoader,
+        public async Task<Order> GetOrderByIdAsync(
+            [ID(nameof(Order))] Guid id,
+            OrderByIdDataLoader dataLoader,
             CancellationToken cancellationToken) =>
             await dataLoader.LoadAsync(id, cancellationToken);
 
-        public async Task<IEnumerable<Customer>> GetCustomersByIdAsync(
-            [ID(nameof(Customer))] Guid[] ids,
-            CustomerByIdDataLoader dataLoader,
+        public async Task<IEnumerable<Order>> GetOrdersByIdAsync(
+            [ID(nameof(Order))] Guid[] ids,
+            OrderByIdDataLoader dataLoader,
             CancellationToken cancellationToken) =>
             await dataLoader.LoadAsync(ids, cancellationToken);
 
         [UseEshopDbContext]
         [UsePaging(IncludeTotalCount = true)]
-        public IQueryable<Customer> GetCustomersOrderByFirstName(
+        public IQueryable<Order> GetOrdersByStatusCode(
             [ScopedService] EshopdbContext context) =>
-            context.Customers.OrderBy(t => t.FirstName);
+            context.Orders.OrderBy(t => t.OrderStatusCode);
     }
 }
