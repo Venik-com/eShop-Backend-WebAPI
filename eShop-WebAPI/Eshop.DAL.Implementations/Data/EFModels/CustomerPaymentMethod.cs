@@ -7,8 +7,8 @@ namespace Eshop.Web.Data.EFModels
 {
     public partial class CustomerPaymentMethod
     {
-        public int CustomerPaymentId { get; set; }
-        public int CustomerId { get; set; }
+        public Guid CustomerPaymentId { get; set; }
+        public Guid CustomerId { get; set; }
         public string PaymentMethodCode { get; set; }
         public string CreditCardNumber { get; set; }
         public string PaymentMethodDetails { get; set; }

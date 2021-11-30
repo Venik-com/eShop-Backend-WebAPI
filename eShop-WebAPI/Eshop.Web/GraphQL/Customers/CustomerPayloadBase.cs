@@ -1,9 +1,6 @@
 ﻿using Eshop.Web.Data.EFModels;
 using Eshop.Web.GraphQL.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.Customers
 {
