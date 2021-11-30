@@ -20,6 +20,7 @@ using Eshop.Web.GraphQL.Customers;
 using System.Diagnostics;
 using HotChocolate;
 using Eshop.Web.GraphQL.DataLoader;
+using Microsoft.AspNetCore.Http;
 
 namespace Eshop.Web
 {
@@ -48,17 +49,23 @@ namespace Eshop.Web
 
             services
                 .AddGraphQLServer()
-                .AddQueryType<Query>()
-                .AddMutationType<Mutation>()
-                .AddDataLoader<CustomerByIdDataLoader>()
-                .AddDataLoader<InvoiceByInvoiceNumberDataLoader>()
-                .AddDataLoader<PaymentByIdDataLoader>()
-                .AddDataLoader<OrderByIdDataLoader>()
-                .AddDataLoader<ProductByIdDataLoader>()
-                .AddDataLoader<ShipmentByIdDataLoader>()
-                .AddDataLoader<RefProductTypeByProductTypeCodeDataLoader>()
+                .AddQueryType(d => d.Name("Query"))
+                    .AddTypeExtension<CustomerQueries>()
+                .AddMutationType(d => d.Name("Mutation"))
+                    // Добавлять новые мутации для разных классов сюда,
+                    // чтобы они они потом в коде объединились в 1 мутацию.
+                    .AddTypeExtension<CustomerMutations>()
+                .AddType<CustomerType>()
+                .EnableRelaySupport()
                 .AddFiltering()
                 .AddSorting()
+                .AddDataLoader<CustomerByIdDataLoader>()
+                .AddDataLoader<OrderByIdDataLoader>()
+                //.AddDataLoader<InvoiceByInvoiceNumberDataLoader>()
+                //.AddDataLoader<PaymentByIdDataLoader>()
+                //.AddDataLoader<ProductByIdDataLoader>()
+                //.AddDataLoader<ShipmentByIdDataLoader>()
+                //.AddDataLoader<RefProductTypeByProductTypeCodeDataLoader>()
                 .AddInMemorySubscriptions();
 
             // In production, the React files will be served from this directory
@@ -80,7 +87,8 @@ namespace Eshop.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
-            if (env.IsDevelopment())
+
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -104,6 +112,10 @@ namespace Eshop.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
+            // Погуглить зачем это.
+            //app.UseWelcomePage();
+
 
             app.UseWebSockets();
             app.UseHttpsRedirection();
@@ -111,6 +123,12 @@ namespace Eshop.Web
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+
+            //});
 
             app.UseEndpoints(endpoints =>
             {

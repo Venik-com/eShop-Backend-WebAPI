@@ -1,18 +1,21 @@
-﻿using System.Reflection;
-using Eshop.Web.Data.EFModels;
-using HotChocolate.Types;
+﻿using HotChocolate.Types;
 using HotChocolate.Types.Descriptors;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.Extensions
 {
-    public class UseApplicationDbContextAttribute : ObjectFieldDescriptorAttribute
+    public class UseUpperCaseAttribute : ObjectFieldDescriptorAttribute
     {
         public override void OnConfigure(
             IDescriptorContext context,
             IObjectFieldDescriptor descriptor,
             MemberInfo member)
         {
-            descriptor.UseDbContext<EshopdbContext>();
+            descriptor.UseUpperCase();
         }
     }
 }

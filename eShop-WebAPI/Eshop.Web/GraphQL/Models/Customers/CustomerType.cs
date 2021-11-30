@@ -1,8 +1,13 @@
 ﻿using Eshop.Web.Data.EFModels;
+using Eshop.Web.GraphQL.DataLoader;
+using Eshop.Web.GraphQL.Extensions;
+using HotChocolate;
+using HotChocolate.Resolvers;
 using HotChocolate.Types;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.Customers
@@ -11,47 +16,39 @@ namespace Eshop.Web.GraphQL.Customers
     {
         protected override void Configure(IObjectTypeDescriptor<Customer> descriptor)
         {
-            descriptor.Description("Represents any executable customer.");
-
             descriptor
-                .Field(c => c.OrganisationOrPerson)
-                .Description("Организация или физ. лицо.");
-            descriptor
-                .Field(c => c.Gender)
-                .Description("Гендер.");
-            descriptor
-                .Field(c => c.Age)
-                .Description("Возраст.");
-            descriptor
-                .Field(c => c.FirstName)
-                .Description("Имя.");
-            descriptor
-                .Field(c => c.LastName)
-                .Description("Фамилия.");
-            descriptor
-                .Field(c => c.EmailAddress)
-                .Description("Эл. почта.");
-            descriptor
-                .Field(c => c.LoginName)
-                .Description("Логин.");
-            descriptor
-                .Field(c => c.LoginPassword)
-                .Description("Пароль.");
+                .ImplementsNode()
+                .IdField(t => t.CustomerId)
+                .ResolveNode((ctx, id) => ctx.DataLoader<CustomerByIdDataLoader>()
+                .LoadAsync(id, ctx.RequestAborted));
 
             //descriptor
-            //    .Field(c => c.Platform)
-            //    .ResolveWith<Resolvers>(c => c.GetPlatform(default!, default!))
-            //    .UseDbContext<AppDbContext>()
-            //    .Description("This is the platform to which the command belongs.");
-
+            //    .Field(c => c.Orders)
+            //    .ResolveWith<CustomerResolvers>(c => c.GetOrders(default!, default!, default!, default))
+            //    .UseDbContext<EshopdbContext>()
+            //    .Description("This is the Customer descriptor with 'CustomerResolvers' class.");
+            
+            descriptor
+                .Field(t => t.FirstName)
+                .UseUpperCase();
         }
 
-        //private class Resolvers
-        //{
-        //    public Platform GetPlatform(Command command, [ScopedService] AppDbContext context)
-        //    {
-        //        return context.Platforms.FirstOrDefault(p => p.Id == command.PlatformId);
-        //    }
-        //}
+        private class CustomerResolvers
+        {
+            public async Task<IEnumerable<Order>> GetOrders(
+                Customer customer,
+                [ScopedService] EshopdbContext dbContext,
+                OrderByIdDataLoader orderById,
+                CancellationToken cancellationToken)
+            {
+                int[] orderIds = await dbContext.Customers
+                    .Where(s => s.CustomerId == customer.CustomerId)
+                    .Include(s => s.CustomerId)
+                    .SelectMany(s => s.Orders.Select(t => t.OrderId))
+                    .ToArrayAsync();
+
+                return await orderById.LoadAsync(orderIds, cancellationToken);
+            }
+        }
     }
 }

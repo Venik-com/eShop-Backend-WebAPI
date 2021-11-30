@@ -3,17 +3,19 @@ using Eshop.Web.GraphQL.Customers;
 using Eshop.Web.GraphQL.Extensions;
 using Eshop.Web.GraphQL.Invoices;
 using HotChocolate;
+using HotChocolate.Types;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Eshop.Web.GraphQL
+namespace Eshop.Web.GraphQL.Customers
 {
-    public class Mutation
+    [ExtendObjectType("Mutation")]
+    public class CustomerMutations
     {
-        [UseApplicationDbContext]
+        [UseEshopDbContext]
         public async Task<AddCustomerPayload> AddCustomerAsync(
             AddCustomerInput input,
             [ScopedService] EshopdbContext context)
@@ -50,7 +52,7 @@ namespace Eshop.Web.GraphQL
                 context.Customers.Remove(customer);
                 Debug.WriteLine(e.Message);
             }
-
+            // TO DO: Тут должно возвращать ошибку, если не получилось создать.
             return new AddCustomerPayload(customer);
         }
     }
