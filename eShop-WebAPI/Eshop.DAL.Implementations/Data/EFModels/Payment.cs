@@ -7,8 +7,8 @@ namespace Eshop.Web.Data.EFModels
 {
     public partial class Payment
     {
-        public int PaymentId { get; set; }
-        public int InvoiceNumber { get; set; }
+        public Guid PaymentId { get; set; }
+        public Guid InvoiceNumber { get; set; }
         public DateTime? PaymentDate { get; set; }
         public decimal? PaymentAmount { get; set; }
 

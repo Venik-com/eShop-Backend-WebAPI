@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.Payments
 {
-    public record AddPaymentInput(int PaymentId, int InvoiceNumber, DateTime? PaymentDate, decimal? PaymentAmount);
+    public record AddPaymentInput(Guid PaymentId, Guid InvoiceNumber, decimal? PaymentAmount);
 }

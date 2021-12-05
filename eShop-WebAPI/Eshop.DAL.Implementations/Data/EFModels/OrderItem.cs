@@ -12,12 +12,14 @@ namespace Eshop.Web.Data.EFModels
             ShipmentItems = new HashSet<ShipmentItem>();
         }
 
-        public int OrderItemId { get; set; }
-        public int ProductId { get; set; }
-        public int OrderId { get; set; }
+        public Guid OrderItemId { get; set; }
+        public Guid ProductId { get; set; }
+        public Guid OrderId { get; set; }
         public int OrderItemStatusCode { get; set; }
         public int OrderItemQuantity { get; set; }
         public decimal OrderItemPrice { get; set; }
+
+        // Возврат некачественных или неисправных изделий производителю для ремонта, обмена или зачёта в баланс.
         public int RmaNumber { get; set; }
         public string RmaIssuedBy { get; set; }
         public DateTime RmaIssuedDate { get; set; }

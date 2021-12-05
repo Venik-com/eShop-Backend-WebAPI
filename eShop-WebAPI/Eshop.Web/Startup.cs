@@ -1,26 +1,24 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Eshop.Web.Data.EFModels;
 using System;
-using Eshop.Web.GraphQL;
 using HotChocolate.AspNetCore;
-using HotChocolate.AspNetCore.Playground;
-using Eshop.Domain.Implementations.Services;
-using Eshop.Domain.Contracts.IServices;
 using Eshop.Web.GraphQL.Customers;
-using System.Diagnostics;
 using HotChocolate;
 using Eshop.Web.GraphQL.DataLoader;
-using Microsoft.AspNetCore.Http;
+using Eshop.Web.GraphQL.Invoices;
+using Eshop.Web.GraphQL.OrderItems;
+using Eshop.Web.GraphQL.Models.OrderItems;
+using Eshop.Web.GraphQL.CustomerPaymentMethod;
+using Eshop.Web.GraphQL.Orders;
+using Eshop.Web.GraphQL.Models.CustomerPaymentMethods;
+using HotChocolate.AspNetCore.Playground;
+using Eshop.Web.GraphQL.Payments;
 
 namespace Eshop.Web
 {
@@ -51,21 +49,33 @@ namespace Eshop.Web
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
                     .AddTypeExtension<CustomerQueries>()
+                    .AddTypeExtension<InvoiceQueries>()
+                    .AddTypeExtension<OrderItemQueries>()
+                    .AddTypeExtension<CustomerPaymentMethodQueries>()
+                    .AddTypeExtension<OrderQueries>()
+                    .AddTypeExtension<PaymentQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
-                    // Добавлять новые мутации для разных классов сюда,
-                    // чтобы они они потом в коде объединились в 1 мутацию.
                     .AddTypeExtension<CustomerMutations>()
+                    .AddTypeExtension<InvoiceMutations>()
+                    .AddTypeExtension<OrderItemMutations>()
+                    .AddTypeExtension<CustomerPaymentMethodMutations>()
+                    .AddTypeExtension<OrderMutations>()
+                    .AddTypeExtension<PaymentMutations>()
                 .AddType<CustomerType>()
+                .AddType<InvoiceType>()
+                .AddType<OrderItemType>()
+                .AddType<CustomerPaymentMethodType>()
+                .AddType<OrderType>()
+                .AddType<PaymentType>()
                 .EnableRelaySupport()
                 .AddFiltering()
                 .AddSorting()
                 .AddDataLoader<CustomerByIdDataLoader>()
+                .AddDataLoader<InvoiceByIdDataLoader>()
                 .AddDataLoader<OrderByIdDataLoader>()
-                //.AddDataLoader<InvoiceByInvoiceNumberDataLoader>()
-                //.AddDataLoader<PaymentByIdDataLoader>()
-                //.AddDataLoader<ProductByIdDataLoader>()
-                //.AddDataLoader<ShipmentByIdDataLoader>()
-                //.AddDataLoader<RefProductTypeByProductTypeCodeDataLoader>()
+                .AddDataLoader<OrderItemByIdDataLoader>()
+                .AddDataLoader<CustomerPaymentMethodByIdDataLoader>()
+                .AddDataLoader<PaymentByIdDataLoader>()
                 .AddInMemorySubscriptions();
 
             // In production, the React files will be served from this directory
@@ -92,14 +102,7 @@ namespace Eshop.Web
             {
                 app.UseDeveloperExceptionPage();
 
-                // Не работает, прочитай
-                // https://github.com/apollographql/apollo-tracing
-                //app.UsePlayground(new PlaygroundOptions
-                //{
-                //    QueryPath = "/api",
-                //    Path = "/Playground"
-                //});
-
+                // Для визуализации схемы вашего API GraphQL.
                 //app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
                 //{
                 //    GraphQLEndPoint = "/graphql",

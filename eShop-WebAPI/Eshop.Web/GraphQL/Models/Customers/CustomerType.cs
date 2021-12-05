@@ -1,14 +1,8 @@
 ﻿using Eshop.Web.Data.EFModels;
 using Eshop.Web.GraphQL.DataLoader;
 using Eshop.Web.GraphQL.Extensions;
-using HotChocolate;
 using HotChocolate.Resolvers;
 using HotChocolate.Types;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.Customers
 {

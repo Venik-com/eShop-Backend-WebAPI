@@ -46,10 +46,8 @@
   <ItemGroup>
     <Folder Include="AdminPanelApp\" />
     <Folder Include="GraphQL\Models\RefPaymentMethods\" />
-    <Folder Include="GraphQL\Models\CustomerPaymentMethods\" />
     <Folder Include="GraphQL\Models\RefOrderStatusCodes\" />
     <Folder Include="GraphQL\Models\RefInvoiceStatusCodes\" />
-    <Folder Include="GraphQL\Models\OrderItems\" />
     <Folder Include="GraphQL\Models\RefOrderItemStatusCodes\" />
   </ItemGroup>
 

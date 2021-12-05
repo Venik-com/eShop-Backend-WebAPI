@@ -19,9 +19,6 @@ namespace Eshop.Web.GraphQL.Payments
                 .Field(c => c.InvoiceNumber)
                 .Description("Id счет-фактуры.");
             descriptor
-                .Field(c => c.PaymentDate)
-                .Description("Дата оплаты.");
-            descriptor
                 .Field(c => c.PaymentAmount)
                 .Description("Сумма оплаты.");
 

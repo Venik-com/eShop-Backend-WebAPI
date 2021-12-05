@@ -21,10 +21,10 @@ namespace Eshop.Web.GraphQL.CustomerPaymentMethod
             var customerPaymentMethod = new Data.EFModels.CustomerPaymentMethod
             {
                 CustomerPaymentId = new Guid(),
-                CustomerId = input.CustomerId,
-                PaymentMethodCode = input.PaymentMethodCode,
-                CreditCardNumber = input.CreditCardNumber,
-                PaymentMethodDetails = input.PaymentMethodDetails
+                CustomerId = input.customerId,
+                PaymentMethodCode = input.paymentMethodCode,
+                CreditCardNumber = input.creditCardNumber,
+                PaymentMethodDetails = input.paymentMethodDetails
             };
 
             context.CustomerPaymentMethods.Add(customerPaymentMethod);

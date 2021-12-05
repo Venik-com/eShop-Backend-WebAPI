@@ -1,3 +1,6 @@
 customer
 order
 CustomerPaymentMethod
+Invoice 
+OrderItem
+Payment <-
