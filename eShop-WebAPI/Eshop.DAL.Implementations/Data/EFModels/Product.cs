@@ -12,7 +12,7 @@ namespace Eshop.Web.Data.EFModels
             OrderItems = new HashSet<OrderItem>();
         }
 
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
         public string ProductTypeCode { get; set; }
         public string ReturnMerchandiseAuthorizationNr { get; set; }
         public string ProductName { get; set; }

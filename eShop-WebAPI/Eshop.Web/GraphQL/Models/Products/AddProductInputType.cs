@@ -13,9 +13,6 @@ namespace Eshop.Web.GraphQL.Products
             descriptor.Description("Represents the input to add for a Product.");
 
             descriptor
-                .Field(c => c.ProductId)
-                .Description("Id продукта.");
-            descriptor
                 .Field(c => c.ProductTypeCode)
                 .Description("Код типа продукта.");
             descriptor

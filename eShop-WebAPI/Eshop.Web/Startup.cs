@@ -19,6 +19,8 @@ using Eshop.Web.GraphQL.Orders;
 using Eshop.Web.GraphQL.Models.CustomerPaymentMethods;
 using HotChocolate.AspNetCore.Playground;
 using Eshop.Web.GraphQL.Payments;
+using Eshop.Web.GraphQL.Products;
+using Eshop.Web.GraphQL.Shipments;
 
 namespace Eshop.Web
 {
@@ -54,6 +56,8 @@ namespace Eshop.Web
                     .AddTypeExtension<CustomerPaymentMethodQueries>()
                     .AddTypeExtension<OrderQueries>()
                     .AddTypeExtension<PaymentQueries>()
+                    .AddTypeExtension<ProductQueries>()
+                    .AddTypeExtension<ShipmentQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
                     .AddTypeExtension<CustomerMutations>()
                     .AddTypeExtension<InvoiceMutations>()
@@ -61,12 +65,16 @@ namespace Eshop.Web
                     .AddTypeExtension<CustomerPaymentMethodMutations>()
                     .AddTypeExtension<OrderMutations>()
                     .AddTypeExtension<PaymentMutations>()
+                    .AddTypeExtension<ProductMutations>()
+                    .AddTypeExtension<ShipmentMutations>()
                 .AddType<CustomerType>()
                 .AddType<InvoiceType>()
                 .AddType<OrderItemType>()
                 .AddType<CustomerPaymentMethodType>()
                 .AddType<OrderType>()
                 .AddType<PaymentType>()
+                .AddType<ProductType>()
+                .AddType<ShipmentType>()
                 .EnableRelaySupport()
                 .AddFiltering()
                 .AddSorting()
@@ -76,6 +84,8 @@ namespace Eshop.Web
                 .AddDataLoader<OrderItemByIdDataLoader>()
                 .AddDataLoader<CustomerPaymentMethodByIdDataLoader>()
                 .AddDataLoader<PaymentByIdDataLoader>()
+                .AddDataLoader<ProductByIdDataLoader>()
+                .AddDataLoader<ShipmentByIdDataLoader>()
                 .AddInMemorySubscriptions();
 
             // In production, the React files will be served from this directory

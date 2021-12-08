@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Web.GraphQL.Products
 {
-    public record AddProductInput(int ProductId, string ProductTypeCode, string ReturnMerchandiseAuthorizationNr,
+    public record AddProductInput(string ProductTypeCode, string ReturnMerchandiseAuthorizationNr,
         string ProductName, int? ProductPrice, string ProductColor, string ProductSize, string ProductDescription,
         string OtherProductDetails);
 }

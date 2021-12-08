@@ -12,9 +12,9 @@ namespace Eshop.Web.Data.EFModels
             ShipmentItems = new HashSet<ShipmentItem>();
         }
 
-        public int ShipmentId { get; set; }
-        public int OrderId { get; set; }
-        public int InvoiceNumber { get; set; }
+        public Guid ShipmentId { get; set; }
+        public Guid OrderId { get; set; }
+        public Guid InvoiceNumber { get; set; }
         public string ShipmentTrackingNymber { get; set; }
         public DateTime? ShipmentDate { get; set; }
         public string OtherShipmentDetails { get; set; }

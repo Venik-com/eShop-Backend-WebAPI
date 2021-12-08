@@ -9,4 +9,3 @@ C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.D
 C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Migrations\obj\Debug\net5.0\Eshop.DAL.Migrations.dll
 C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Migrations\obj\Debug\net5.0\ref\Eshop.DAL.Migrations.dll
 C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Migrations\obj\Debug\net5.0\Eshop.DAL.Migrations.pdb
-C:\Users\Henningsvaer\Documents\GitHub\eShop-Backend-WebAPI\eShop-WebAPI\Eshop.DAL.Migrations\obj\Debug\net5.0\Eshop.DAL.Migrations.csproj.AssemblyReference.cache

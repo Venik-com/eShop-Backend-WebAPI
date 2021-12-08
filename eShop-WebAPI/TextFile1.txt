@@ -3,4 +3,6 @@ order
 CustomerPaymentMethod
 Invoice 
 OrderItem
-Payment <-
+Payment 
+Product
+Shipment |
